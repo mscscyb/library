@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title th:text="${pageTitle}">CFC Library</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+    <header>
+        <h1>📚 CFC London Library</h1>
+        <nav>
+            <a href="/books">Home</a> |
+            <a href="/books/new">Add Book</a>
+        </nav>
+    </header>
+
+    <main>
+        <div th:replace="${body}">Loading...</div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 CFC London Library</p>
+    </footer>
+</body>
+</html>
