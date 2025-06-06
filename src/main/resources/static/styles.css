@@ -199,3 +199,32 @@ body {
 .form-container button {
     margin-top: 10px;
 }
+
+.toggle-actions-btn {
+    background-color: #126180;
+    color: #fff;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-actions-btn:hover {
+    background-color: #4682b4;
+}
+
+.actions-form input,
+.actions-form label {
+    display: block;
+}
+
+.actions-form input {
+    margin-bottom: 8px;
+    padding: 6px;
+    border-radius: 4px;
+    border: 1px solid #444;
+    background-color: #222;
+    color: #eee;
+}

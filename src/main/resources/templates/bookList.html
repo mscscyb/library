@@ -46,27 +46,27 @@
 
             <!-- Buy Button and Form -->
             <td class="actions">
-                <form th:action="@{/books/purchase/{id}(id=${book.id})}" method="post" onsubmit="return confirmPurchase();">
-                    <label for="quantity">Quantity:</label>
-                    <input id="quantity" type="number" name="quantity" th:min="1" th:max="${book.stock}" value="1" required />
+                <button type="button" class="toggle-actions-btn">Buy 📦</button>
 
-                    <label for="customerName">Customer Name:</label>
-                    <input id="customerName" type="text" name="customerName" placeholder="Enter your name" required />
+                <div class="actions-form" style="display:none; margin-top:10px;">
+                    <form th:action="@{/books/purchase/{id}(id=${book.id})}" method="post" onsubmit="return confirmPurchase();">
+                        <label for="quantity" style="display:block; margin-bottom:4px;">Quantity:</label>
+                        <input id="quantity" type="number" name="quantity" th:min="1" th:max="${book.stock}" value="1" required />
 
-                    <label for="amountPaid">Amount Paid:</label>
-                    <input id="amountPaid" type="number" name="amountPaid" step="0.01" min="0" required />
+                        <label for="customerName" style="display:block; margin-bottom:4px; margin-top:8px;">Customer Name:</label>
+                        <input id="customerName" type="text" name="customerName" placeholder="Enter your name" required />
 
-                    <label for="comment">Comment (optional):</label>
-                    <input id="comment" type="text" name="comment" placeholder="Add a comment" />
+                        <label for="amountPaid" style="display:block; margin-bottom:4px; margin-top:8px;">Amount Paid:</label>
+                        <input id="amountPaid" type="number" name="amountPaid" step="0.01" min="0" required />
 
-                    <button type="submit">Buy</button>
-                </form>
-                <script>
-                    function confirmPurchase() {
-                        return confirm('This will update the stock. Are you sure you want to buy this book?');
-                    }
-                </script>
+                        <label for="comment" style="display:block; margin-bottom:4px; margin-top:8px;">Comment (optional):</label>
+                        <input id="comment" type="text" name="comment" placeholder="Add a comment" />
+
+                        <button type="submit" style="margin-top:10px;">Buy</button>
+                    </form>
+                </div>
             </td>
+
 
 
             <!--            <td class="actions">-->
@@ -131,6 +131,15 @@
             });
         });
     });
+    $(document).ready(function () {
+    // Existing comment edit code here...
+
+    // Toggle purchase form visibility on button click
+    $('.toggle-actions-btn').click(function() {
+        $(this).siblings('.actions-form').slideToggle(200);
+    });
+});
+
 </script>
 
 </body>
